@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "status",
+  "version": "${mod_version}",
+  "name": "Status",
+  "description": "Share your status",
+  "authors": [
+    "Max Henkel"
+  ],
+  "contact": {
+    "website": "https://modrepo.de"
+  },
+  "license": "All Rights Reserved",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "net.nightium.status.StatusClient"
+    ],
+    "main": [
+      "net.nightium.status.Status"
+    ]
+  },
+  "mixins": [
+    "status.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": "${fabric_loader_dependency}",
+    "minecraft": "${minecraft_dependency}"
+  },
+  "breaks": {
+    "fabric-api": "${fabric_api_dependency_breaks}"
+  },
+  "custom": {
+    "status": {
+      "compatibilityVersion": "${compatibility_version}"
+    }
+  }
+}
