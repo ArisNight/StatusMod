@@ -2,15 +2,15 @@
   "schemaVersion": 1,
   "id": "status",
   "version": "${mod_version}",
-  "name": "Status",
+  "name": "StatusSMP",
   "description": "Share your status",
   "authors": [
-    "Max Henkel"
+    "ArisNight"
   ],
   "contact": {
-    "website": "https://modrepo.de"
+    "website": "https://github.com/ArisNight/StatusMod"
   },
-  "license": "All Rights Reserved",
+  "license": "MIT",
   "icon": "icon.png",
   "environment": "*",
   "entrypoints": {

@@ -116,12 +116,9 @@ public class ClientPlayerStateManager {
         return states.get(player);
     }
 
-    private static final ResourceLocation DND = ResourceLocation.fromNamespaceAndPath(Status.MODID, "textures/icons/dnd.png");
-    private static final ResourceLocation OPEN = ResourceLocation.fromNamespaceAndPath(Status.MODID, "textures/icons/open.png");
-    private static final ResourceLocation NO_AVAILABILITY = ResourceLocation.fromNamespaceAndPath(Status.MODID, "textures/icons/no_availability.png");
     private static final ResourceLocation RECORDING = ResourceLocation.fromNamespaceAndPath(Status.MODID, "textures/icons/recording.png");
     private static final ResourceLocation STREAMING = ResourceLocation.fromNamespaceAndPath(Status.MODID, "textures/icons/streaming.png");
-    private static final ResourceLocation NEUTRAL = ResourceLocation.fromNamespaceAndPath(Status.MODID, "textures/icons/neutral.png");
+    private static final ResourceLocation NONE = ResourceLocation.fromNamespaceAndPath(Status.MODID, "textures/icons/neutral.png");
 
     @Nullable
     public ResourceLocation getIcon(UUID player) {
@@ -134,7 +131,7 @@ public class ClientPlayerStateManager {
         } else if (state.getState().equals("streaming")) {
             return STREAMING;
         } else {
-            return NEUTRAL;
+            return NONE;
         }
     }
 
@@ -144,12 +141,7 @@ public class ClientPlayerStateManager {
         if (state == null) {
             return null;
         }
-        if (state.getAvailability().equals(Availability.DO_NOT_DISTURB)) {
-            return DND;
-        } else if (state.getAvailability().equals(Availability.OPEN)) {
-            return OPEN;
-        }
-        return NO_AVAILABILITY;
+        return NONE;
     }
 
     public void clearStates() {
